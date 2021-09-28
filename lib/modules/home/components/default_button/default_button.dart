@@ -9,7 +9,7 @@ Container defaultButton({
     height: 35,
     decoration: BoxDecoration(
       color: primaryColor,
-      borderRadius: BorderRadius.circular(12.0)
+      borderRadius: BorderRadius.circular(16.0)
 
     ),
     child: TextButton(

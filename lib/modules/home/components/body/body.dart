@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/modules/home/components/header_with_search_box/header_with_search_box.dart';
+import 'package:plant_app/modules/home/components/recommended_plants/recommended_plants.dart';
 import 'package:plant_app/modules/home/components/title_with_button/title_with_button.dart';
 
 class Body extends StatelessWidget {
@@ -12,7 +13,9 @@ class Body extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           HeaderWithSearchBox(size: size),
-          TitleWithMoreButton(title: 'Recommended', press: () {})
+          TitleWithMoreButton(title: 'Recommended', press: () {}),
+          RecommendedPlants(),
+
         ],
       ),
     );
