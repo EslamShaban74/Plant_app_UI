@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/components/constants.dart';
+import 'package:plant_app/modules/details/details_screen.dart';
 
 class RecommendedPlants extends StatelessWidget {
   @override
@@ -14,7 +15,12 @@ class RecommendedPlants extends StatelessWidget {
             title: "Samantha",
             country: "Russia",
             price: 520,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
           PlantCard(
             image: "assets/images/image_2.png",
@@ -39,7 +45,7 @@ class RecommendedPlants extends StatelessWidget {
 class PlantCard extends StatelessWidget {
   final String title, image, country;
   final int price;
-  final Function press;
+  final VoidCallback press;
 
   const PlantCard({
     Key? key,
@@ -63,11 +69,19 @@ class PlantCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
+            onTap: press,
             child: Column(
               children: [
                 Image.asset(image),
                 Container(
                   decoration: BoxDecoration(
+                      boxShadow: [
+                        // BoxShadow(
+                        //   offset:Offset(0,0.5),
+                        //   blurRadius:80,
+                        //   color: primaryColor.withOpacity(0.23),
+                        // )
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(10),
@@ -76,17 +90,20 @@ class PlantCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
-
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Text(
                               title.toUpperCase(),
-                              style: TextStyle(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .button!
+                                  .copyWith(fontSize: 13.0),
                             ),
                             Text(
                               country.toUpperCase(),
-                              style: TextStyle(color: primaryColor.withOpacity(0.5)),
+                              style: TextStyle(
+                                  color: primaryColor.withOpacity(0.5)),
                             )
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
