@@ -23,18 +23,17 @@ class DetailsBody extends StatelessWidget {
         const SizedBox(height: 20.0),
         Expanded(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              SizedBox(
-                height: 82,
-                width: size.width / 2,
+              Expanded(
                 child: Container(
-                  height: 84,
-                  width: size.width / 2,
+                  height: size.height * 0.09,
                   decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(20),
-                          topRight: Radius.circular(20))),
+                    color: primaryColor,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                    ),
+                  ),
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
@@ -48,12 +47,15 @@ class DetailsBody extends StatelessWidget {
                 ),
               ),
               Expanded(
-                  child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'DESCRIPTION',
-                        style: TextStyle(color: primaryColor),
-                      )))
+                  child: Container(
+                height: size.height * 0.09,
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'DESCRIPTION',
+                      style: TextStyle(color: primaryColor),
+                    )),
+              ))
             ],
           ),
         )

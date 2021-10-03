@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_app/components/constants.dart';
 import 'package:plant_app/modules/home/components/featured_plants/featured_plants.dart';
 import 'package:plant_app/modules/home/components/header_with_search_box/header_with_search_box.dart';
 import 'package:plant_app/modules/home/components/recommended_plants/recommended_plants.dart';
@@ -11,12 +12,12 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreButton(title: 'Recommended', press: () {}),
           RecommendedPlants(),
-          SizedBox(height: 10.0),
           TitleWithMoreButton(title: 'Featured Plants', press: () {}),
           FeaturedPlants()
         ],

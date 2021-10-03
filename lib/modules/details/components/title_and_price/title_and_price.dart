@@ -21,7 +21,7 @@ class TitleAndPrice extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(
-                  left: kDefaultPadding, top: kDefaultPadding * 0.5),
+                  left: kDefaultPadding, top: kDefaultPadding * 2.5),
               child: Text(
                 'Angelica'.toUpperCase(),
                 style: Theme.of(context)
@@ -32,7 +32,7 @@ class TitleAndPrice extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: kDefaultPadding, top: kDefaultPadding * 0.2),
+                  left: kDefaultPadding, top: kDefaultPadding *0.6),
               child: Text(
                 country,
                 style: TextStyle(
@@ -46,7 +46,8 @@ class TitleAndPrice extends StatelessWidget {
         ),
         Spacer(),
         Padding(
-          padding: const EdgeInsets.only(right: kDefaultPadding),
+          padding: const EdgeInsets.only(
+              right: kDefaultPadding, top: kDefaultPadding * 2.5),
           child: Text(
             '\$$price',
             style: Theme.of(context)
