@@ -1,13 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plant_app/components/constants.dart';
-import 'package:plant_app/modules/details/components/icon_card/icon_card.dart';
 import 'package:plant_app/modules/details/components/image_and_icons/image_and_icons.dart';
 import 'package:plant_app/modules/details/components/title_and_price/title_and_price.dart';
 
 class DetailsBody extends StatelessWidget {
-  const DetailsBody({Key? key}) : super(key: key);
+  final List<String> titles;
+  final List<String> country;
+  final List<int> price;
+  final List<String> images;
+  final int index;
+
+  const DetailsBody(
+    this.titles,
+    this.country,
+    this.price,
+    this.images,
+    this.index,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +26,9 @@ class DetailsBody extends StatelessWidget {
       children: <Widget>[
         ImageAndIcons(size: size),
         TitleAndPrice(
-          title: 'angelica',
-          country: 'Russia',
-          price: 440,
+          title: '${titles[index]}',
+          country: '${country[index]}',
+          price: price[index],
         ),
         const SizedBox(height: 20.0),
         Expanded(
