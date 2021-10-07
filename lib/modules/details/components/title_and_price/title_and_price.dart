@@ -23,7 +23,7 @@ class TitleAndPrice extends StatelessWidget {
               padding: const EdgeInsets.only(
                   left: kDefaultPadding, top: kDefaultPadding * 2.5),
               child: Text(
-                'Angelica'.toUpperCase(),
+                title.toUpperCase(),
                 style: Theme.of(context)
                     .textTheme
                     .headline4!

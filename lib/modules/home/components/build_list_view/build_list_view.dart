@@ -3,7 +3,7 @@ import 'package:plant_app/components/constants.dart';
 import 'package:plant_app/modules/details/details_screen.dart';
 
 
-Future<void> navigateTo(context, widget) =>
+dynamic navigateTo(context, widget) async =>
     Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
 
 Widget buildPlantCard(titles, country, price, context,  images,size,) {
@@ -22,7 +22,8 @@ Widget buildPlantCard(titles, country, price, context,  images,size,) {
           ),
           child: GestureDetector(
             onTap: (){
-              navigateTo(context, DetailsScreen(titles[index],country[index],price[index],images[index],index));
+              print('tapped');
+             navigateTo(context, DetailsScreen(titles[index],country[index],price[index],images[index],index));
             },
             child: Column(
               children: <Widget>[

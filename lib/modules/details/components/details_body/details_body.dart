@@ -5,10 +5,10 @@ import 'package:plant_app/modules/details/components/image_and_icons/image_and_i
 import 'package:plant_app/modules/details/components/title_and_price/title_and_price.dart';
 
 class DetailsBody extends StatelessWidget {
-  final List<String> titles;
-  final List<String> country;
-  final List<int> price;
-  final List<String> images;
+  final String titles;
+  final String country;
+  final int price;
+  final String images;
   final int index;
 
   const DetailsBody(
@@ -24,11 +24,11 @@ class DetailsBody extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Column(
       children: <Widget>[
-        ImageAndIcons(size: size),
+        ImageAndIcons(size: size, images: images,index: index,),
         TitleAndPrice(
-          title: '${titles[index]}',
-          country: '${country[index]}',
-          price: price[index],
+          title: '$titles',
+          country: '$country',
+          price: price,
         ),
         const SizedBox(height: 20.0),
         Expanded(

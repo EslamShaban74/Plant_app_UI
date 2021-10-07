@@ -13,7 +13,7 @@ class HeaderWithSearchBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
-      height: size.height * 0.2,
+      height: size.height * 0.19,
       child: Stack(
         children: <Widget>[
           Container(
@@ -33,7 +33,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  "Hi Uishopy!",
+                  "Plants Shop ☘♥",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
