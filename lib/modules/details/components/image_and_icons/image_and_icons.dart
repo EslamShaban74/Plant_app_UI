@@ -4,17 +4,27 @@ import 'package:flutter_svg/svg.dart';
 import 'package:plant_app/components/constants.dart';
 import 'package:plant_app/modules/details/components/icon_card/icon_card.dart';
 
-class ImageAndIcons extends StatelessWidget {
+class ImageAndIcons extends StatefulWidget {
   final Size size;
+  final String images;
+  int index;
 
-  const ImageAndIcons({Key? key, required this.size}) : super(key: key);
+  ImageAndIcons(
+      {Key? key, required this.size, required this.images, required this.index})
+      : super(key: key);
 
+  @override
+  _ImageAndIconsState createState() => _ImageAndIconsState();
+}
+
+class _ImageAndIconsState extends State<ImageAndIcons> {
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
         Column(
           children: <Widget>[
+
             Padding(
               padding: const EdgeInsets.symmetric(
                   vertical: kDefaultPadding * 4, horizontal: kDefaultPadding),
@@ -22,7 +32,13 @@ class ImageAndIcons extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    // if (widget.index == 1) {
+                    //   setState(() {
+                    //     widget.index = 0;
+                    //   });
+                    // } else {
+                      Navigator.pop(context);
+                    // }
                   },
                   icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
                 ),
@@ -35,8 +51,8 @@ class ImageAndIcons extends StatelessWidget {
           ],
         ),
         Container(
-          height: size.height*0.573,
-          width: size.width*0.77,
+          height: widget.size.height * 0.573,
+          width: widget.size.width * 0.77,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
@@ -44,14 +60,14 @@ class ImageAndIcons extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                offset: Offset(0,10),
-                blurRadius:60,
+                offset: Offset(0, 10),
+                blurRadius: 60,
                 color: primaryColor.withOpacity(0.3),
               )
             ],
             image: DecorationImage(
                 alignment: Alignment.centerLeft,
-                image: AssetImage("assets/images/img.png"),
+                image: AssetImage(widget.images),
                 fit: BoxFit.cover),
           ),
         ),
